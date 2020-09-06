@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Ret_info">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="B_result" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Db_list" nillable="true" type="tns:ArrayOfDb" />
+      <xs:element minOccurs="0" name="S_error" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ret_info" nillable="true" type="tns:Ret_info" />
+  <xs:complexType name="ArrayOfDb">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Db" nillable="true" type="tns:Db" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDb" nillable="true" type="tns:ArrayOfDb" />
+  <xs:complexType name="Db">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="S_long" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S_short" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="View_count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Db" nillable="true" type="tns:Db" />
+</xs:schema>
